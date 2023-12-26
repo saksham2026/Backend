@@ -10,7 +10,7 @@ import { User } from "../models/user.model.js";
 const cookieOptions = {
   httpOnly: true,
   secure: true,
-  samesite: 'none'
+  sameSite: 'none'
 };
 
 // Before we move on, let me tell you the diffrence between accessToken and refreshToken

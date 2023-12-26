@@ -25,7 +25,7 @@ async function generateAccessandRefreshTokens(user_id) {
 const cookieOptions = {
   httpOnly: true,
   secure: true,
-  samesite: 'none',
+  sameSite: 'none',
 };
 
 const LoginUser = asyncHandler(async (req, res, next) => {
