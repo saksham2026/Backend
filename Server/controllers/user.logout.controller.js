@@ -3,6 +3,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 const cookieOptions = {
   httpOnly: true,
   secure: true,
+  SameSite: 'none',
 };
 const LogoutUser = async (req, res, next) => {
   const user_id = req._id;
