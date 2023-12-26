@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:'https://retrocraft-frontend.onrender.com',
+    origin:'https://retrocraft-fontend.onrender.com/',
     credentials: true,
   })
 );
