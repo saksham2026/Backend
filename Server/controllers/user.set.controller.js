@@ -17,10 +17,8 @@ const setUser = asyncHandler(async (req, res, next) => {
     role,
     aboutme,
     experience,
-    pay,
+    paygrade,
     awards,
-    username,
-    mobile,
     jobprofile
   } = req.body;
   console.log("Body", req.body);
@@ -53,7 +51,7 @@ const setUser = asyncHandler(async (req, res, next) => {
         $set: {
           about: aboutme,
           experience,
-          paygrade: pay,
+          paygrade: paygrade,
           jobprofile
         },
       }

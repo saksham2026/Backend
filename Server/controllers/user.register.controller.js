@@ -32,7 +32,7 @@ const Register = asyncHandler(async (req, res, next) => {
   if (user3[0]?._id != undefined) {
     throw new ApiError(411, "User with given mobile Exists");
   }
-  if (req.files?.avatar) {
+  if (req.files.avatar) {
     avatarFilePath = req.files?.avatar[0]?.path;
     console.log("Hello", avatarFilePath);
   }
