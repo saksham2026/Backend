@@ -15,11 +15,11 @@ const freelancerSchema = new Schema(
     },
     paygrade: {
       type: String,
-      enum: ["A", "B", "C", "D"]
+      enum: ["A", "B", "C", "D","None"]
     },
     jobprofile:{
       type:String,
-      enum: ["A", "B", "C", "D"]
+      enum: ["A", "B", "C", "D","None"]
     }
   },
   { timestamps: true }
