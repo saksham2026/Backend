@@ -144,4 +144,20 @@ const rejectProposal = asyncHandler(async (req, res, next) => {
 
 });
 
-export { jobApply, getPropoposals, acceptProposal, rejectProposal };
+const getMyJobs = asyncHandler(async (req, res, next) => {
+  const freelancer = req._id;
+
+  if(!freelancer) throw new ApiError(400, "Freelancer ID not recieved");
+
+  const myJobs = await jobMatch.find({
+    freelancer: freelancer,
+  }).populate("producer");
+
+  if(!myJobs) throw new ApiError(400, "Jobs not found");
+
+  res
+  .status(200)
+  .json(new ApiResponse(200, myJobs, "My Jobs fetched successfully"));
+});
+
+export { jobApply, getPropoposals, acceptProposal, rejectProposal, getMyJobs };

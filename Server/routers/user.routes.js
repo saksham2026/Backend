@@ -18,9 +18,9 @@ import { getJobsByUsername } from "../controllers/getjobsbyusername.js";
 import { getRole } from "../controllers/user.getrole.js";
 import { deleteJob } from "../controllers/deletejob.controller.js";
 import { getFilteredJobs } from "../controllers/getfilteredjob.js";
-import { acceptProposal, getPropoposals, jobApply, rejectProposal } from "../controllers/job.controllers.js";
+import { acceptProposal, getMyJobs, getPropoposals, jobApply, rejectProposal } from "../controllers/job.controllers.js";
 const Router = express.Router();
-
+ 
 Router.route("/register").post(
   upload.fields([
     {
@@ -63,4 +63,5 @@ Router.route("/jobapply").post(jwtAuth, jobApply);
 Router.route("/getproposals").post(jwtAuth, getPropoposals);
 Router.route("/accepted").post(jwtAuth, acceptProposal);
 Router.route("/rejected").post(jwtAuth, rejectProposal);
+Router.route("/myjobs").post(jwtAuth, getMyJobs);
 export default Router;
